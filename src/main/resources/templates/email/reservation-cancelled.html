@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${subject}">Reservation Cancelled</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body style="font-family: 'Poppins', Arial, sans-serif; background-color: #D4EBED; margin: 0; padding: 20px;">
+    <div style="max-width: 600px; margin: 0 auto; background: #FFFFFA; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(13,92,99,0.15);">
+        <div style="background: #C3423F; color: #FFFFFA; padding: 30px; text-align: center;">
+            <h1 style="margin: 0; font-size: 28px; font-weight: 700;">DevOops</h1>
+            <p style="margin: 10px 0 0 0; opacity: 0.9; font-weight: 400;">Accommodation Booking Platform</p>
+        </div>
+
+        <div style="padding: 30px;">
+            <h2 style="color: #C3423F; margin-top: 0; font-weight: 700;">Reservation Cancelled</h2>
+            <p style="color: #247B7B; line-height: 1.6;">Hello,</p>
+            <p style="color: #247B7B; line-height: 1.6;">A reservation for your accommodation has been cancelled:</p>
+
+            <table style="width: 100%; margin: 25px 0; border-collapse: collapse; background: #D4EBED; border-radius: 8px;">
+                <tr>
+                    <td style="padding: 15px; border-bottom: 1px solid #78CDD7; font-weight: 500; color: #0D5C63; width: 40%;">Guest</td>
+                    <td style="padding: 15px; border-bottom: 1px solid #78CDD7; color: #247B7B;" th:text="${guestName}">John Doe</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; border-bottom: 1px solid #78CDD7; font-weight: 500; color: #0D5C63;">Accommodation</td>
+                    <td style="padding: 15px; border-bottom: 1px solid #78CDD7; color: #247B7B;" th:text="${accommodationName}">Cozy Studio</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; border-bottom: 1px solid #78CDD7; font-weight: 500; color: #0D5C63;">Check-in</td>
+                    <td style="padding: 15px; border-bottom: 1px solid #78CDD7; color: #247B7B;" th:text="${checkIn}">2024-03-15</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; border-bottom: 1px solid #78CDD7; font-weight: 500; color: #0D5C63;">Check-out</td>
+                    <td style="padding: 15px; border-bottom: 1px solid #78CDD7; color: #247B7B;" th:text="${checkOut}">2024-03-20</td>
+                </tr>
+                <tr th:if="${reason}">
+                    <td style="padding: 15px; font-weight: 500; color: #0D5C63;">Reason</td>
+                    <td style="padding: 15px; color: #C3423F; font-weight: 500;" th:text="${reason}">Guest cancelled</td>
+                </tr>
+            </table>
+
+            <p style="color: #247B7B; line-height: 1.6;">
+                The dates are now available for other guests to book.
+            </p>
+
+            <p style="text-align: center; margin-top: 30px;">
+                <a th:href="${frontendUrl} + '/my-accommodations'"
+                   style="display: inline-block; padding: 14px 28px; background: #0D5C63; color: #FFFFFA; text-decoration: none; border-radius: 8px; font-weight: 500;">
+                    View My Accommodations
+                </a>
+            </p>
+        </div>
+
+        <div style="background: #D4EBED; padding: 20px; text-align: center; border-top: 1px solid #78CDD7;">
+            <p style="margin: 0; font-size: 12px; color: #247B7B;">
+                This email was sent by DevOops. You can manage your notification preferences in your profile settings.
+            </p>
+            <p style="margin: 10px 0 0 0; font-size: 12px; color: #44A1A0;">
+                &copy; 2024 DevOops. All rights reserved.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

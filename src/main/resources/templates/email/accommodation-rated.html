@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${subject}">Accommodation Review Received</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body style="font-family: 'Poppins', Arial, sans-serif; background-color: #D4EBED; margin: 0; padding: 20px;">
+    <div style="max-width: 600px; margin: 0 auto; background: #FFFFFA; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(13,92,99,0.15);">
+        <div style="background: #247B7B; color: #FFFFFA; padding: 30px; text-align: center;">
+            <h1 style="margin: 0; font-size: 28px; font-weight: 700;">DevOops</h1>
+            <p style="margin: 10px 0 0 0; opacity: 0.9; font-weight: 400;">Accommodation Booking Platform</p>
+        </div>
+
+        <div style="padding: 30px;">
+            <h2 style="color: #0D5C63; margin-top: 0; font-weight: 700;">New Review for Your Accommodation!</h2>
+            <p style="color: #247B7B; line-height: 1.6;">Hello,</p>
+            <p style="color: #247B7B; line-height: 1.6;">Your accommodation has received a new review:</p>
+
+            <div style="background: #D4EBED; border-radius: 12px; padding: 25px; margin: 25px 0;">
+                <h3 style="margin: 0 0 15px 0; color: #0D5C63; font-weight: 700;" th:text="${accommodationName}">Cozy Studio</h3>
+                <p style="margin: 0 0 10px 0; color: #247B7B;">Reviewed by <span style="color: #0D5C63; font-weight: 500;" th:text="${guestName}">John Doe</span></p>
+
+                <div style="text-align: center; margin: 20px 0;">
+                    <div style="font-size: 36px; color: #44A1A0;">
+                        <span th:each="i : ${#numbers.sequence(1, rating)}">&#9733;</span>
+                        <span th:each="i : ${#numbers.sequence(rating + 1, 5)}" style="color: #78CDD7;">&#9733;</span>
+                    </div>
+                    <p style="font-size: 24px; font-weight: 700; color: #0D5C63; margin: 10px 0;">
+                        <span th:text="${rating}">4.0</span> / 5
+                    </p>
+                </div>
+
+                <p th:if="${comment}" style="color: #247B7B; font-style: italic; margin: 15px 0 0 0; padding: 15px; background: #FFFFFA; border-radius: 8px; text-align: center;">
+                    "<span th:text="${comment}">Nice place</span>"
+                </p>
+            </div>
+
+            <p style="text-align: center; margin-top: 30px;">
+                <a th:href="${frontendUrl} + '/my-accommodations'"
+                   style="display: inline-block; padding: 14px 28px; background: #0D5C63; color: #FFFFFA; text-decoration: none; border-radius: 8px; font-weight: 500;">
+                    View Accommodation
+                </a>
+            </p>
+        </div>
+
+        <div style="background: #D4EBED; padding: 20px; text-align: center; border-top: 1px solid #78CDD7;">
+            <p style="margin: 0; font-size: 12px; color: #247B7B;">
+                This email was sent by DevOops. You can manage your notification preferences in your profile settings.
+            </p>
+            <p style="margin: 10px 0 0 0; font-size: 12px; color: #44A1A0;">
+                &copy; 2024 DevOops. All rights reserved.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
