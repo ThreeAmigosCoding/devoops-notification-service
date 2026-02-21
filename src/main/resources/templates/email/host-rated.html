@@ -22,7 +22,7 @@
                 <p style="margin: 0 0 10px 0; color: #0D5C63; font-weight: 500;" th:text="${guestName}">John Doe</p>
                 <div style="font-size: 36px; color: #44A1A0; margin: 15px 0;">
                     <span th:each="i : ${#numbers.sequence(1, rating)}">&#9733;</span>
-                    <span th:each="i : ${#numbers.sequence(rating + 1, 5)}" style="color: #78CDD7;">&#9733;</span>
+                    <span th:if="${rating < 5}" th:each="i : ${#numbers.sequence(rating + 1, 5)}" style="color: #78CDD7;">&#9733;</span>
                 </div>
                 <p style="font-size: 24px; font-weight: 700; color: #0D5C63; margin: 10px 0;">
                     <span th:text="${rating}">4.5</span> / 5
